@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Панель управления студентами</title>
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <script defer src="index.js"></script>
+  <style>
+    thead th:hover {
+      --bs-table-accent-bg: var(--bs-table-hover-bg);
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <h1 class="m-auto text-center mb-4">Панель управления студентами</h1>
+
+    <form action="#" class="form mb-4 p-2" autocomplete="off">
+
+      <div class="row mb-2">
+
+        <label class="col-3 d-flex flex-column-reverse">
+          <input class="form-control" type="text" name="name">
+          <div class="invalid-feedback"></div>
+          Имя:
+        </label>
+
+        <label class="col-3 d-flex flex-column-reverse">
+          <input class="form-control" type="text" name="surname">
+          <div class="invalid-feedback"></div>
+          Фамилия:
+        </label>
+
+        <label class="col-3 d-flex flex-column-reverse">
+          <input class="form-control" type="text" name="midname">
+          <div class="invalid-feedback"></div>
+          Отчество:
+        </label>
+
+      </div>
+
+      <div class="row">
+
+        <label class="col-3 d-flex flex-column-reverse">
+          <input type="text" class="form-control" name="faculty">
+          <div class="invalid-feedback"></div>
+          Факультет:
+        </label>
+
+        <label class="col-3 d-flex flex-column-reverse">
+          <input type="date" class="form-control" name="birthDate">
+          <div class="invalid-feedback"></div>
+          Дата рождения:
+        </label>
+
+        <label class="col-3 d-flex flex-column-reverse me-auto">
+          <input type="number" class="form-control" name="beginStudyYear">
+          <div class="invalid-feedback"></div>
+          Год начала обучения:
+        </label>
+
+        <button class="col-2 m-auto mb-0 btn btn-primary fs-5">
+          Добавить
+        </button>
+
+      </div>
+
+    </form>
+
+    <form class="filter mb-4" autocomplete="off">
+
+      <h2 class="mb-2 fs-4">Фильтр</h2>
+
+      <div class="row">
+
+        <label class="col-3">
+          ФИО:
+          <input class="form-control" type="text" input-filter="fullName">
+        </label>
+
+        <label class="col-3">
+          Факультет:
+          <input class="form-control" type="text" input-filter="faculty">
+        </label>
+
+        <label class="col-3">
+          Год начала обучения:
+          <input class="form-control" type="number" input-filter="beginStudyYear">
+        </label>
+
+        <label class="col-3">
+          Год окончания обучения:
+          <input class="form-control" type="number" input-filter="endStudyYear">
+        </label>
+
+      </div>
+
+    </form>
+
+    <table class="table table-primary table-striped">
+
+      <thead>
+        <tr>
+          <th scope="col" btn-filter="fullName">ФИО</th>
+          <th scope="col" btn-filter="faculty">Факультет</th>
+          <th scope="col" btn-filter="birthDate">Дата рождения</th>
+          <th scope="col" btn-filter="studyPeriod">Годы обучения</th>
+        </tr>
+      </thead>
+
+      <tbody class="tbody">
+
+      </tbody>
+
+    </table>
+
+  </div>
+</body>
+</html>
